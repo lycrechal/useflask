@@ -1,0 +1,93 @@
+body {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  background: url("http://img1.3lian.com/img013/v4/96/d/47.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+}
+
+.form-signin {
+  max-width: 280px;
+  margin: 60px auto 10px;
+}
+.form-signin .form-signin-heading {
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0px 1px 2px #111;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  border-radius: 6px 6px 0px 0px;
+}
+.form-signin input[type="text"]:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.form-signin input[type="password"] {
+  z-index: 2;
+  margin-bottom: 20px;
+  border-top: none;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  border-radius: 0px 0px 6px 6px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+}
+.form-signin input[type="password"]:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+}
+.form-signin .btn {
+  font-weight: bold;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+}
+
+p.right
+{
+position:absolute;
+left:50px;
+top:20px;
+font-size:20px;
+width:50px;
+height:50px;
+
+}
+
+p.sign-up {
+  text-shadow: 0px 1px 2px #222;
+  color: #fff;
+  font-size: 12px;
+}
+a,h1,h2{color:#377ba8;}
+h1,h2{font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;margin:0;}
+h1{border-bottom:2px solid #eee;}
+h2{font-size:1.2em;}
+.page1{margin:5em auto;width:70em;height:50em;padding:1.8em;background:None;}
+.page{margin:5em auto;width:35em;height:20em;border:5px solid #ccc;padding:1.8em;background:white;}
+.page2{margin:5em auto;width:50em;height:40em;border:5px solid #ccc;padding:1.8em;background:white;position:absolute;right:50px;}
+.entries{list-style:none;margin:0;padding:0;width:35em;height:70em;}
+.entries li{margin:0.8em 1.2em;}
+.entries li h2{margin-left:-lem;}
+.add-entry{font-size:0.9em;border-bottom:1px solid #ccc;}
+.add-entry d1{font-weight:bold;}
+.metanav{text-align:right;font-size:0.8em;padding:0.3em;margin-bottom:lem;background:#fafafa;}
+.flash{background:#cee5F5;padding:0.5em;border:1px solid #aacbe2;}
+.error{background:#f0d6d6;padding:0.5em;}

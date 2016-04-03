@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>爬虫养殖</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='bootstrap.min.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+   <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+   <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+<body >
+
+<div class="page1">
+    
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1000" style="background:white;">
+   <!-- 轮播（Carousel）指标 -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active" ></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>   
+   <!-- 轮播（Carousel）项目 -->
+   <div class="carousel-inner" style="height:20em;">
+    <div class="item active">
+        
+            <blockquote>
+              <div class="row">
+                <div class="col-sm-3 text-center">
+                  <img class="img-circle" src="static/1.jpg" style="width: 150px;height:150px;position: absolute;top:50px;left:30px;">
+                </div>
+                <div class="col-sm-9" style="top:50px;">
+                  <p>blablablabla</p>
+                  <small>Someone say</small>
+                </div>
+              </div>
+            </blockquote>
+          </div>
+         <div class="item">
+            <blockquote>
+              <div class="row">
+                <div class="col-sm-3 text-center">
+                  <img class="img-circle" src="static/2.jpg" style="width: 150px;height:150px;position: absolute;top:50px;left:30px;">
+                </div>
+                <div class="col-sm-9" style="top:50px;">
+                  <p>blablablabla</p>
+                  <small>Someone say</small>
+                </div>
+              </div>
+            </blockquote>
+          </div>
+         <div class="item">
+            <blockquote>
+              <div class="row">
+                <div class="col-sm-3 text-center">
+                  <img class="img-circle" src="static/3.jpg" style="width: 150px;height:150px;position: absolute;top:50px;left:30px;">
+                </div>
+                <div class="col-sm-9" style="top:50px;">
+                  <p>blablablabla</p>
+                  <small>Someone say</small>
+                </div>
+              </div>
+            </blockquote>
+          </div>
+         <div class="item">
+            <blockquote>
+              <div class="row">
+                <div class="col-sm-3 text-center">
+                  <img class="img-circle" src="static/4.jpg" style="width: 150px;height:150px;position: absolute;top:50px;left:30px;">
+                </div>
+                <div class="col-sm-9" style="top:50px;">
+                  <p>blablablabla</p>
+                  <small>Someone say</small>
+                </div>
+              </div>
+            </blockquote>
+          </div>
+   </div>
+   <!-- 轮播（Carousel）导航 -->
+
+   <a class="left carousel-control" href="#myCarousel" 
+      data-slide="prev" style="background:None">&lsaquo;</a>
+   <a class="carousel-control right" href="#myCarousel" 
+      data-slide="next" style="background:None">&rsaquo;</a>
+</div> 
+
+    
+    
+    <div class="col-sm-3 col-sm-offset-3 col-xs-12 col-xs-offset-0 xs-hidden">
+    {% if not session.logged_in %}
+    <a href="{{url_for('login')}}">
+    <button type="button" name="button" class="btn btn-info  btn-lg sign-up-hero" style="position: absolute;top:100px;left:150px">
+    Sign Up</button></a></div>
+        
+    {%else%}
+    <a href="{{url_for('logout')}}">
+    <button type="button" name="button" class="btn btn-info  btn-lg sign-up-hero" style="position: absolute;top:100px;left:150px">
+    Logout</button></a></div>
+    {%endif%}
+    
+    {%for message in get_flashed_messages()%}
+    <div class="flash">{{message}}</div>
+    {%endfor%}
+    {%block body%}{%endblock%}
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>爬虫养殖</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='bootstrap.min.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+   <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+   <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="page2">
+
+    {%if session.logged_in%}
+        <form action="{{url_for('add_entry')}}" method="post" class="add-entry">
+            <div class="input-group" >
+            <span class="input-group-addon" >Title:</span>
+            <input type="text" class="form-control" placeholder="亲，输入标题啊" name="title">
+            </div>
+            <br>
+            
+            <div class="form-group">
+            <label for="name">Text:</label>
+            <textarea class="form-control" rows="8" name="text"></textarea>
+            </div>
+          
+
+                        <button type="submit" class="btn btn-info btn-block" data-toggle="modal" 
+   data-target="#myModal">Share</button>
+
+            <!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               哈哈
+            </h4>
+         </div>
+         <div class="modal-body">
+            成功提交了！！！
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">关闭
+            </button>
+
+         </div>
+      </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div>
+</form>
+
+  {%endif%}
+
+        
+        
+
+
+<img src="http://img4q.duitang.com/uploads/item/201506/15/20150615014038_wGYJh.thumb.700_0.jpeg" style="width: 200px;height:200px;float:right;">
+</div>
+<ul class="nav nav-pills nav-stacked" style="max-width: 260px;position:absolute;top:25px;left:70px">
+   <li class="active">
+      <a href="#">
+         <span class="badge pull-right">new</span>
+         List&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </a>
+   </li>
+</ul>
+<div class="col-md-3" style="position:absolute;left:70px;top:70px;border:5px dotted #ccc;">
+
+    
+    <ul class="list-group" >
+    {% for entry in entries%}
+        <li class="list-group-item" data-toggle="tooltip" title="{{ entry.text|safe }}" data-placement="right" style="background:None;border-style:None;">{{entry.title}}</li>
+    {%else%}
+        <li><em>Unbelievable.No entries here so far</em>
+    {%endfor%}
+    </ul>
+
+    <button type="button" class="btn btn-success" style="float:right;"><a href="{{url_for('logout')}}">Log out</a></button>
+</div>
+</body>
+</html>
